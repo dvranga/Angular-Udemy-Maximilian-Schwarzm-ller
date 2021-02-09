@@ -1,3 +1,8 @@
 <!-- <h3>This is app-servers</h3> -->
-<button class="btn btn-primary" [disabled]="!allowNewServer" >Add Server</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer"
+
+(click)="onCreateServer()">Add Server</button>
+<!-- <h6>{{ allowNewServer }}</h6> -->
+<!-- <h6 [innerText]="allowNewServer"></h6> -->
+<P>{{ serverCreationStatus }}</P>
 <app-server></app-server>
