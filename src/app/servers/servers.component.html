@@ -13,10 +13,11 @@
 (click)="onCreateServer()">Add Server</button>
 <!-- <h6>{{ allowNewServer }}</h6> -->
 <!-- <h6 [innerText]="allowNewServer"></h6> -->
-<P>{{ serverCreationStatus }}</P>
+<!-- <P>{{ serverCreationStatus }}</P> -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
 
-<input type="text" class="form-control" [(ngModel)]="userName">
+<!-- <input type="text" class="form-control" [(ngModel)]="userName">
 <p>{{ userName }}</p>
 <br/>
-<button class="btn btn-primary" [disabled]="!userName" (click)="userName=''">Reset userName</button>
+<button class="btn btn-primary" [disabled]="!userName" (click)="userName=''">Reset userName</button> -->
 <app-server></app-server>
