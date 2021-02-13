@@ -26,3 +26,15 @@
 <br/>
 <button class="btn btn-primary" [disabled]="!userName" (click)="userName=''">Reset userName</button> -->
 <app-server *ngFor="let server of servers"></app-server>
+<hr/>
+<button class="btn btn-primary" (click)="getDisplayDetails()">Display Details</button>
+<br/>
+<p *ngFor="let item of details" [ngStyle]="{backgroundColor:getColor()}" [ngClass]="{color:count === 6}">{{ count }}</p>
+
+
+<button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+<p *ngIf="showSecrect">Secret Password = tune</p>
+<div *ngFor="let item of log;let i=index"
+[ngStyle]="{backgroundColor: i>=4?'blue':'tansparent'}"
+[ngClass]="{'white-text': i>=4}"
+>{{item}}</div>
