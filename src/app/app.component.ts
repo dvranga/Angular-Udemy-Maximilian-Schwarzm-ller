@@ -11,5 +11,7 @@ import { Component } from '@angular/core';
   `]
 })
 export class AppComponent {
+  serverElements=[{type:'server',name:'TestServer',content:'Just a test!'}];//assigning value through key and value pair
 
+  
 }
