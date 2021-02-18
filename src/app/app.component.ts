@@ -17,6 +17,9 @@ export class AppComponent {
   @Output() intervalFired = new EventEmitter<number>();
   lastNumber=0;
 
+  oddNumbers:number[]=[];
+  evenNumbers:number[]=[];
+
   onServerAdded(serverData:{serverName:string,serverContent:string}){
     this.serverElements.push({
       type:'server',
@@ -42,8 +45,15 @@ export class AppComponent {
   }
 
   onIntervalFired(fireNumber:any){
-    console.log(fireNumber)
+    if (fireNumber%2===0) {
+      this.evenNumbers.push(fireNumber);
+    }
+    else{
+      this.oddNumbers.push(fireNumber);
+    }
   }
+
+
 
   
 }
