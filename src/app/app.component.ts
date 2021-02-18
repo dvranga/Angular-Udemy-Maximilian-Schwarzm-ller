@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   serverElements=[{type:'server',name:'TestServer',content:'Just a test!'}];//assigning value through key and value pair
+
+  interval;
+  @Output() intervalFired = new EventEmitter<number>();
+  lastNumber=0;
 
   onServerAdded(serverData:{serverName:string,serverContent:string}){
     this.serverElements.push({
@@ -28,5 +32,18 @@ export class AppComponent {
       content:bluePrintData.serverContent
     })
   }
+
+  onChangeFirst(){
+    this.serverElements[0].name='changed';
+  }
+
+  onDestroyFirst(){
+    this.serverElements.slice(0,1);
+  }
+
+  onIntervalFired(fireNumber:any){
+    console.log(fireNumber)
+  }
+
   
 }
