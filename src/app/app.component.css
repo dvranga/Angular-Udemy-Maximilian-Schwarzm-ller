@@ -9,3 +9,11 @@ h3 {
 p {
   color: blue;
 }
+
+.odd{
+   color: red;
+}
+
+.even{
+  color: white;
+}

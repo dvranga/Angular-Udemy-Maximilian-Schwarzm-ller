@@ -3,12 +3,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  // styleUrls: ['./app.component.css']
-  styles:[`
-    h3{
-      color:dodgerblue;
-    }
-  `]
+  styleUrls: ['./app.component.css']
+  // styles:[`
+  //   h3{
+  //     color:dodgerblue;
+  //   }
+  // `]
 })
 export class AppComponent {
   serverElements=[{type:'server',name:'TestServer',content:'Just a test!'}];//assigning value through key and value pair
@@ -17,8 +17,13 @@ export class AppComponent {
   @Output() intervalFired = new EventEmitter<number>();
   lastNumber=0;
 
-  oddNumbers:number[]=[];
-  evenNumbers:number[]=[];
+  // oddNumbers:number[]=[];
+  // evenNumbers:number[]=[];
+
+  onlyOdd=false;
+  numbers=[1,2,3,4,5];
+  oddNumbers=[1,3,5,7];
+  evenNumbers=[2,4,6,8];
 
   onServerAdded(serverData:{serverName:string,serverContent:string}){
     this.serverElements.push({
